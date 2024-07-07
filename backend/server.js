@@ -10,15 +10,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const db = require('./models');
 
-// Sync Database
 db.sequelize.sync().then(() => {
   console.log('Database connected');
 });
 
-// Routes
 require('./routes/auth.routes')(app);
 require('./routes/customer.routes')(app);
 require('./routes/transaction.routes')(app);
+require('./routes/barang.routes')(app);
 
 const PORT = 3100;
 app.listen(PORT, () => {

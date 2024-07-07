@@ -11,7 +11,7 @@ exports.getAll = (req, res) => {
       },
       {
         model: TransactionD,
-        attributes: ['kd_barang', 'nama_barang', 'qty', 'subtotal'],
+        attributes: ['id_barang', 'nama_barang', 'qty', 'subtotal'],
       },
     ],
   })
@@ -31,7 +31,7 @@ exports.create = (req, res) => {
     .then(transactionH => {
       const transactionItems = items.map(item => ({
         id_transaksi_h: transactionH.id,
-        kd_barang: item.kd_barang,
+        id_barang: item.id_barang,
         nama_barang: item.nama_barang,
         qty: item.qty,
         subtotal: item.subtotal,

@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     const TransactionD = sequelize.define('transaksi_d', {
-      kd_barang: {
+      id_barang: {
         type: DataTypes.STRING,
         allowNull: false,
       },
